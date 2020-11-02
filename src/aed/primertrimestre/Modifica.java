@@ -3,6 +3,7 @@ package aed.primertrimestre;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Modifica {
@@ -21,13 +22,13 @@ public static void main (String[] args) {
 			
 			//Sentencia de insert
 			
-			String instruccionSql="INSERT INTO EQUIPOS (codEquipo, nomEquipo, codLiga, localidad, internacional) VALUES (null,'JAVA', 11111, 'Los Sauces', 0)";
+			String instruccionSql="INSERT INTO EQUIPOS (codEquipo, nomEquipo, codLiga, localidad, internacional) VALUES (null,'JAVA22', 11111, 'Los Sauces', 0)";
 			
 			//ejecutando la sentencia anterior
 			miStatement.execute(instruccionSql);
 		
-		}catch(Exception e) {
-			System.out.println("No conecta");
+		}catch(SQLException e) {
+			e.printStackTrace();
 		}
 		
 	}

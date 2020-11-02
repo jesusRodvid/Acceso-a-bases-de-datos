@@ -31,8 +31,9 @@ public class Acceso {
 				System.out.println(codEquipo+","+nomEquipo+","+codLiga+","+localidad+","+internacional); 
 			}
 		
-		}catch(Exception e) {
-			System.out.println("No conecta");
+		}catch(SQLException e) {
+			e.printStackTrace();
+		
 		}
 		
 	}
