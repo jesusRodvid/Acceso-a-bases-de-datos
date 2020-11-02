@@ -13,22 +13,22 @@ public class Acceso {
 			//2. Crear OBJETO STATEMENT
 			Statement miStatement = miConexion.createStatement();
 			//3. ejecutar Sql
-			ResultSet miResulset=miStatement.executeQuery("SELECT codEquipo, nomEquipo, nomLiga, localidad, internacional FROM equipos INNER JOIN ligas ON equipos.codLiga=ligas.codliga");
+			ResultSet miResulset=miStatement.executeQuery("SELECT codEquipo, nomEquipo, nomLiga, localidad, internacional FROM equipos INNER JOIN ligas ON equipos.codLiga=ligas.codliga order by codEquipo");
 			//4. Recorrer miResulset. Mientras haya un registro en equipos se va imprimir lo del bucle con .next
 			
 			while(miResulset.next()) {
-				System.out.println(miResulset.getString("codEquipo") + " " + 
+				/* System.out.println(miResulset.getString("codEquipo") + " " + 
 			miResulset.getString("nomEquipo") + " " + miResulset.getString("nomLiga") + " " +
-						miResulset.getString("localidad") + " " + miResulset.getString("internacional"));
+						miResulset.getString("localidad") + " " + miResulset.getString("internacional"));*/
 				
 				//4.1 hecho como en el ejemplo del profesor
-			/*	String codEquipo = miResulset.getString(1);
+				String codEquipo = miResulset.getString(1);
 				String nomEquipo = miResulset.getString(2);
 				String codLiga = miResulset.getString(3);
 				String localidad = miResulset.getString(4);
 				String internacional = miResulset.getString(5); 
 
-				System.out.println(codEquipo+","+nomEquipo+","+codLiga+","+localidad+","+internacional); */
+				System.out.println(codEquipo+","+nomEquipo+","+codLiga+","+localidad+","+internacional); 
 			}
 		
 		}catch(Exception e) {
